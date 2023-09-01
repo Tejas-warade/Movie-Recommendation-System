@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%
+}
+
+.navbar {
+    background-color: #333; /* Background color of the navbar */
+    color: #fff; /* Text color */
+    padding: 10px 0; /* Top and bottom padding */
+}
+
+.container {
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Left and right padding within the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo:hover {
+    color: #ff4500; /* Change color on hover */
+}
+
+/* Style the hero section */
+.hero {
+    height: 100%;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header.hero {
+    background-image: url('/static/bg.jpg');
+    opacity: 1;
+}
+
+.hero-title {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the movie grid */
+.movie-grid {
+    padding: 50px 0;
+    background-color: #111;
+    color: #fff;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.movie-posters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px; /* Increased gap between posters */
+}
+
+.movie-poster {
+    width: calc(20% - 20px); /* 5 movies in 1 row */
+    margin-bottom: 30px;
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px;
+    overflow: hidden; /* Hide overflowing content within the border */
+    transition: transform 0.3s; /* Add a transition effect */
+}
+
+.movie-poster:last-child {
+    margin-right: 0; /* Remove margin for the last poster in each row */
+}
+
+.movie-poster img {
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-poster:hover {
+    transform: scale(1.05); /* Add scale effect on hover */
+}
+
+.movie-title {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}

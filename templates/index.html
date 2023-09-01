@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Movie Recommendation</a>
+        </div>
+    </nav>
+    
+    <header class="hero">
+        <div class="content">
+            <h1 class="hero-title">Discover New Movies</h1>
+            <p class="hero-subtitle">Find movies based on your favorite titles!</p>
+            <form id="search-form" method="post" action="/">
+                <input type="text" id="movie_name" name="movie_name" class="search-input" placeholder="Enter your favorite movie...">
+                <button type="submit" class="search-btn" id="btn" onclick="scrollToDiscover()">Search</button>
+            </form>
+        </div>
+    </header>
+    
+    
+    <section class="movie-grid">
+        <div class="content">
+            <h2 class="section-title" id="rec">Discover Movies</h2> <!-- Initial text -->
+            
+            <!-- Display error messages if any -->
+            {% for message in get_flashed_messages() %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+            
+            <div class="movie-posters">
+                {% for movie, poster in movie_data %}
+                    <div class="movie-poster">
+                        <img src="{{ poster }}" alt="{{ movie }}">
+                        <p class="movie-title">{{ movie }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="content">
+            <p>&copy; Designed by Tejas Warade.</p>
+            <div class="social-links">
+                <a href="https://github.com/Tejas-warade" target="_blank">GitHub</a> |
+                <a href="https://www.linkedin.com/in/tejas-warade-583741215/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function (event) {
+            // Change the text to "Recommended Movies" after clicking search
+            document.getElementById('rec').textContent = 'Showing Recommended Movies';
+        });
+
+        function scrollToDiscover() {
+        // Get a reference to the section you want to scroll to (in this case, the "Discover Movies" section)
+        var discoverSection = document.querySelector('.movie-grid');
+
+        // Scroll to the "Discover Movies" section smoothly
+        discoverSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>
